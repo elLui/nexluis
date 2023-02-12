@@ -1,4 +1,6 @@
+const { withContentlayer } = require( "next-contentlayer" );
 const nextConfig = {
+  
   reactStrictMode : true, webpack : ( config, { isServer } ) => {
     const prefix = config.assetPrefix ?? config.basePath ?? "";
     config.module.rules.push( {
@@ -29,4 +31,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withContentlayer( nextConfig );
